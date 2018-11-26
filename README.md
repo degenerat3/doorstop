@@ -20,7 +20,7 @@ To run DoorStop as a GUI, simply call it with no arguments:
 To run DoorStop as a CLI, run it with the --cli argument:  
 `python doorstop.py --cli`  
 `Enter PCAP file to analyze: mycap.pcap`  
-or specify input file using the --inp argument
+or specify input file using the --inp argument:  
 `python doorstop.py --cli --inp mycap.pcap`
 
 #### Output
@@ -56,4 +56,8 @@ Example:
     --------------------------------------------
     Packets with invalid certs: 13, 746
 
+GUI Usage:  
+Select your PCAP file using the "Browse PCAP" button, and once selected use the "Analyze" button to run the certificate check.  
+![GUI File Browser](https://i.postimg.cc/6pKhZMqJ/gui-file-browse.png "File Selection")  
+![GUI File Browser](https://i.postimg.cc/zD97zz1f/gui-analyze.png "File Analysis")  
 
