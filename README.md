@@ -1,4 +1,4 @@
-# doorstop
+# DoorStop
         ___                 __ _              
        /   \___   ___  _ __/ _\ |_ ___  _ __  
       / /\ / _ \ / _ \| '__\ \| __/ _ \| '_ \ 
@@ -14,19 +14,21 @@ Reverse https shells can be hard to detect because unlike TCP and HTTP, the cont
 Meterpreter reverse https shells have randomly generated certificates, so if the issuer/domain are random charcters then we know the server is not legitimate and could be a reverse https back door.
 
 #### Usage
-To run the python script, simply call it with the pcap as an argument:  
-`cert_check.py mycapture.pcap`  
+To run DoorStop as a GUI, simply call it with no arguments:  
+`python doorstop.py`  
 
-or run the script with no arguments and specify the capture with user input:  
-`cert_check.py`  
+To run DoorStop as a CLI, run it with the --cli argument:  
+`python doorstop.py --cli`  
 `Enter PCAP file to analyze: mycap.pcap`  
+or specify input file using the --inp argument
+`python doorstop.py --cli --inp mycap.pcap`
 
 #### Output
-The output is fairly simple.  As the PCAP is analyzed it will display weather it was valid or not.  If a certificate is flagged as invalid, the packet number will be displayed.  A list of all flagged packets will also be displayed at the end.  With this information, an investigator can use a tool such as [wireshark](https://www.wireshark.org/) to take a more in-depth look at the suspicious packets.  
+The output of the CLI is fairly simple.  As the PCAP is analyzed it will display weather it was valid or not.  If a certificate is flagged as invalid, the packet number will be displayed.  A list of all flagged packets will also be displayed at the end.  With this information, an investigator can use a tool such as [wireshark](https://www.wireshark.org/) to take a more in-depth look at the suspicious packets.  
   
 Example: 
 
-    jim@box$ python cert_check.py caps/pizza.pcap
+    user@box$ python cert_check.py caps/pizza.pcap
 
     Checking caps/pizza.pcap...
     --------------------------------------------
@@ -54,4 +56,4 @@ Example:
     --------------------------------------------
     Packets with invalid certs: 13, 746
 
-`
+
